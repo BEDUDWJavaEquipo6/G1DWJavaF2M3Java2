@@ -38,4 +38,20 @@ class MateriaRepositoryTest {
         assertNotNull(materia.getId());
     }
 
+    @Test
+    @DisplayName("Busca por Materia")
+    void buscarPorNombreMateria() {
+        final String nombreMateria = "materia";
+
+        Materia materia = new Materia();
+        materia.setNombre(nombreMateria);
+
+        materiaRepository.save(materia);
+
+        Iterable<Materia> listaMaterias = materiaRepository.findAllByNombre(nombreMateria);
+        assertTrue(listaMaterias.iterator().hasNext());
+
+        Materia materiaRecuperada = listaMaterias.iterator().next();
+        assertEquals(materia, materiaRecuperada);
+    }
 }

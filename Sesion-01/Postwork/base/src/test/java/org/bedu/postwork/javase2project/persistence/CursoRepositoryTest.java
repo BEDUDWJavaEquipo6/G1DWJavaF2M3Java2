@@ -47,7 +47,7 @@ class CursoRepositoryTest {
         materia = materiaRepository.save(materia);
 
         estudiante = new Estudiante();
-        estudiante.setNombreCompleto("Jose Angel Cordoba");
+        estudiante.setNombreCompleto("Jose A Cordoba en Curso");
         estudiante=estudianteRepository.save(estudiante);
 
 
@@ -62,6 +62,28 @@ class CursoRepositoryTest {
         curso = cursoRepository.save(curso);
         assertNotNull(curso.getId());
     }
+
+    @Test
+    @DisplayName("Busca por Curso")
+    void searchMatchByNames() {
+
+        final char ciclo= '3';
+        Curso curso = new Curso();
+        curso.setCiclo(ciclo);
+        curso.setMaterias(materia);
+        Map<Estudiante, Integer> calificacion = new HashMap<>();
+        calificacion.put(estudiante,5);
+        curso.setCalificaciones(calificacion);
+        cursoRepository.save(curso);
+
+        Iterable<Curso> listaCursos = cursoRepository.findAllByCiclo(ciclo);
+        assertTrue(listaCursos.iterator().hasNext());
+
+        Curso cursoRecuperado = listaCursos.iterator().next();
+        assertEquals(curso, cursoRecuperado);
+
+    }
+
 
     @Test
     @DisplayName("Guarda una calificación")

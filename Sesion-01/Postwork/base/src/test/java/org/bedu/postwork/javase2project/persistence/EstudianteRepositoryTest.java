@@ -38,4 +38,19 @@ class EstudianteRepositoryTest {
         assertNotNull(estudiante.getId());
     }
 
+    @Test
+    @DisplayName("Busca por nombre del Estudiante")
+    void buscarPorNombreEstudiante() {
+        final String nombreEstudiante = "Frank G";
+
+        Estudiante estudiante = new Estudiante();
+        estudiante.setNombreCompleto(nombreEstudiante);
+        estudianteRepository.save(estudiante);
+
+        Iterable<Estudiante> listaEstudiantes = estudianteRepository.findAllByNombreCompleto(nombreEstudiante);
+        assertTrue(listaEstudiantes.iterator().hasNext());
+
+        Estudiante estudianteRecuperado = listaEstudiantes.iterator().next();
+        assertEquals(estudiante, estudianteRecuperado);
+    }
 }
