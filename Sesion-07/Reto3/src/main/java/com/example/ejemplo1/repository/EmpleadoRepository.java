@@ -1,15 +1,21 @@
 package com.example.ejemplo1.repository;
 
 import com.example.ejemplo1.entity.Empleado;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.util.HashMap;
-import java.util.Map;
+//import reactor.core.publisher.Flux;
+//import reactor.core.publisher.Mono;
+//import java.util.HashMap;
+//import java.util.Map;
 
 @Repository
+@Repository
+public interface EmpleadoRepository extends ReactiveMongoRepository<Empleado, String>{
+
+}
+/*
 public class EmpleadoRepository {
+
     static Map<String, Empleado> empleadoData;
     static {
         empleadoData = new HashMap<>();
@@ -60,3 +66,4 @@ public class EmpleadoRepository {
 
 
 }
+*/
