@@ -23,12 +23,10 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(SpringExtension.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class CursoRepositoryTest {
-
     @Autowired
     private CursoRepository cursoRepository;
     @Autowired
     private MateriaRepository materiaRepository;
-
     @Autowired
     private EstudianteRepository estudianteRepository;
 
@@ -41,7 +39,6 @@ class CursoRepositoryTest {
         materiaRepository.deleteAll();
         estudianteRepository.deleteAll();
 
-
         materia = new Materia();
         materia.setNombre("Base de datos");
         materia = materiaRepository.save(materia);
@@ -49,7 +46,6 @@ class CursoRepositoryTest {
         estudiante = new Estudiante();
         estudiante.setNombreCompleto("Jose A Cordoba en Curso");
         estudiante=estudianteRepository.save(estudiante);
-
 
     }
 

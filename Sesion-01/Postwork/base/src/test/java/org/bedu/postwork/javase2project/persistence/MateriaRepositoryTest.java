@@ -22,11 +22,14 @@ class MateriaRepositoryTest {
     private CursoRepository cursoRepository;
     @Autowired
     private MateriaRepository materiaRepository;
+    @Autowired
+    private EstudianteRepository estudianteRepository;
 
     @BeforeAll
     void setUpDatabase(){
         cursoRepository.deleteAll();
         materiaRepository.deleteAll();
+        estudianteRepository.deleteAll();
 
     }
 
