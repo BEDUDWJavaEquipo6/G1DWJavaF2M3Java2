@@ -27,6 +27,7 @@ class MateriaRepositoryTest {
     void setUpDatabase(){
         cursoRepository.deleteAll();
         materiaRepository.deleteAll();
+
     }
 
     @Test

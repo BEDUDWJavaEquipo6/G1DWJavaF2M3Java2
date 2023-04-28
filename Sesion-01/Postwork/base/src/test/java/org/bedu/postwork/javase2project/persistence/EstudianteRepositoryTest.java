@@ -23,6 +23,7 @@ class EstudianteRepositoryTest {
     @Autowired
     private EstudianteRepository estudianteRepository;
 
+
     @BeforeAll
     void setUpDatabase(){
         cursoRepository.deleteAll();
