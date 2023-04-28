@@ -3,26 +3,17 @@ package org.bedu.postwork.javase2project.model;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Objects;
-
 @Entity
-@Table(name="estudiantes")
-public class Estudiante {
+@Table(name = "materias")
+public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "nombre_completo")
+    @Column(name = "nombre")
     @Size(max = 45)
-    private String nombreCompleto;
+    private String nombre;
 
-    public Estudiante(){
-
-    }
-    /*
-    public Estudiante(Long id) {
-            this.id = id;
-    }
-    */
     public Long getId() {
         return id;
     }
@@ -31,24 +22,24 @@ public class Estudiante {
         this.id = id;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Estudiante that = (Estudiante) o;
-        return Objects.equals(id, that.id) && Objects.equals(nombreCompleto, that.nombreCompleto);
+        Materia materia = (Materia) o;
+        return Objects.equals(id, materia.id) && Objects.equals(nombre, materia.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombreCompleto);
+        return Objects.hash(id, nombre);
     }
 }
