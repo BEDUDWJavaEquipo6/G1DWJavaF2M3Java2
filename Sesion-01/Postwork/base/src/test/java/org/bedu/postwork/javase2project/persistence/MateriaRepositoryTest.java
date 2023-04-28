@@ -54,4 +54,5 @@ class MateriaRepositoryTest {
         Materia materiaRecuperada = listaMaterias.iterator().next();
         assertEquals(materia, materiaRecuperada);
     }
+
 }
