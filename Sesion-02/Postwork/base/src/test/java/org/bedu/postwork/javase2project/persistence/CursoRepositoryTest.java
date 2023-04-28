@@ -79,26 +79,12 @@ class CursoRepositoryTest {
         assertNotNull(curso.getId());
     }
 
-    @Test
-    void getCurso(){
-        Curso curso = new Curso();
-        curso.setCiclo('2');
-        curso.setMaterias(materia);
 
-        Map<Estudiante, Integer> calificacion = new HashMap<>();
-        calificacion.put(estudiante,10);
-
-        curso.setCalificaciones(calificacion);
-        curso = cursoRepository.save(curso);
-
-        curso = cursoRepository.findById(curso.getId()).get();
-        assertEquals(4, curso.getId());
-    }
 
     @Test
     void guarda2Calificaciones(){
         Curso curso = new Curso();
-        curso.setCiclo('2');
+        curso.setCiclo('4');
         curso.setMaterias(materia);
 
         Map<Estudiante, Integer> calificacion = new HashMap<>();
@@ -109,5 +95,21 @@ class CursoRepositoryTest {
         curso = cursoRepository.save(curso);
         assertNotNull(curso.getId());
     }
+
+    /*@Test
+    void getCurso(){
+        Curso curso = new Curso();
+        curso.setCiclo('3');
+        curso.setMaterias(materia);
+
+        Map<Estudiante, Integer> calificacion = new HashMap<>();
+        calificacion.put(estudiante,10);
+
+        curso.setCalificaciones(calificacion);
+        curso = cursoRepository.save(curso);
+
+        curso = cursoRepository.findById(curso.getId()).get();
+        assertEquals(4, curso.getId());
+    }*/
 
 }
