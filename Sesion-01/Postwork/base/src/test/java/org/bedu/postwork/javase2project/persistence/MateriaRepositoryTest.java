@@ -2,6 +2,7 @@ package org.bedu.postwork.javase2project.persistence;
 
 import org.bedu.postwork.javase2project.model.Materia;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,14 +19,18 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class MateriaRepositoryTest {
     @Autowired
+    private CursoRepository cursoRepository;
+    @Autowired
     private MateriaRepository materiaRepository;
 
     @BeforeAll
     void setUpDatabase(){
+        cursoRepository.deleteAll();
         materiaRepository.deleteAll();
     }
 
     @Test
+    @DisplayName("Guarda una Materia")
     void guarda(){
         Materia materia = new Materia();
         materia.setNombre("Programación");

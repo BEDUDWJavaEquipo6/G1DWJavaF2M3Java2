@@ -4,6 +4,7 @@ import org.bedu.postwork.javase2project.model.Curso;
 import org.bedu.postwork.javase2project.model.Estudiante;
 import org.bedu.postwork.javase2project.model.Materia;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,6 +41,7 @@ class CursoRepositoryTest {
         materiaRepository.deleteAll();
         estudianteRepository.deleteAll();
 
+
         materia = new Materia();
         materia.setNombre("Base de datos");
         materia = materiaRepository.save(materia);
@@ -52,6 +54,7 @@ class CursoRepositoryTest {
     }
 
     @Test
+    @DisplayName("Guarda un Curso")
     void guarda(){
         Curso curso = new Curso();
         curso.setCiclo('1');
@@ -61,6 +64,7 @@ class CursoRepositoryTest {
     }
 
     @Test
+    @DisplayName("Guarda una calificación")
     void guardaCalificaciones(){
         Curso curso = new Curso();
         curso.setCiclo('2');
