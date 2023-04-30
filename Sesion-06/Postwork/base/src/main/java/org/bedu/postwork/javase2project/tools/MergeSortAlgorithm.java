@@ -1,7 +1,6 @@
 package org.bedu.postwork.javase2project.tools;
 
 import java.util.*;
-
 //import java.util.List;
 public class MergeSortAlgorithm {
     public static <T extends Comparable<T>> List<T> sort(List<T> unsortedList) {

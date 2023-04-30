@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class MergeSortAlgorithmTest {
     private static final Random RANDON_GENERATOR = new Random();
     private static final int COLLECTION_SIZE = 100000;
-
     private List<Integer> unsorted;
 
     @RequiredArgsConstructor
@@ -61,5 +60,4 @@ class MergeSortAlgorithmTest {
         IntStream.range(1, sorted.size())
                 .forEach(idx -> assertThat(sorted.get(idx - 1).getValue()).isLessThanOrEqualTo(sorted.get(idx).getValue()));
     }
-
 }
