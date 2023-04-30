@@ -29,6 +29,12 @@
 
 5. Ejecutamos el Runnable con un ExecutorService. Donde cada hilo deberá calcular cada curso.
 
+   Utilizamos el siguiente código en terminal:
+
+   ```
+   mvn spring-root:run
+   ```
+
    ![](images/Sesion2-_3-bfS8.png)
 
 <br/>
