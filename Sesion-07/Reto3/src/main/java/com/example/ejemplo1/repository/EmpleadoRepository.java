@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 //import java.util.Map;
 
 @Repository
-@Repository
 public interface EmpleadoRepository extends ReactiveMongoRepository<Empleado, String>{
 
 }
