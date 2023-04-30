@@ -6,8 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 public class ReceptorSolicitudes implements Runnable{
 
+//a) Procesa y espera solicitudes dentro de run
+//Tomando como ejemplo el EventLoopSimple desarrollado en la s4
     private boolean enEjecucion = false;
-    private Queue<SolicitudEstudiante> solicitudesPendientes = new LinkedList<>();
+    private Queue<SolicitudEstudiante> listaSolicitudes = new LinkedList<>();
     private final NotificadorInscripcion worker;
 
     public ReceptorSolicitudes(NotificadorInscripcion worker) {
@@ -17,15 +19,15 @@ public class ReceptorSolicitudes implements Runnable{
     @Override
     public void run() {
         try{
-            while(enEjecucion || !solicitudesPendientes.isEmpty()){
-                SolicitudEstudiante solicitud = solicitudesPendientes.poll();
+            while(enEjecucion || !listaSolicitudes.isEmpty()){
+                SolicitudEstudiante solicitud = listaSolicitudes.poll();
 
                 if(solicitud == null){
-                    System.out.println("Esperando solicitudes nuevas...");
+                    System.out.println("No hay solicitudes pendientes, el sistema sigue en espera");
                     TimeUnit.SECONDS.sleep(1);
                     continue;
                 }
-                worker.notificarMaestro(solicitud);
+                worker.notificarAMaestro(solicitud);
                 TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
@@ -33,6 +35,7 @@ public class ReceptorSolicitudes implements Runnable{
         }
     }
 
+    //b) Iniciar y detener la ejecucion con metodos separados
     public void iniciar(){
         this.enEjecucion = true;
         new Thread(this).start();
@@ -42,11 +45,15 @@ public class ReceptorSolicitudes implements Runnable{
         this.enEjecucion = false;
     }
 
+//c) Agregar nuevas solicitudes a la lista de pendientes
     public void registrarEvento(SolicitudEstudiante evento){
-        solicitudesPendientes.add(evento);
+        listaSolicitudes.add(evento);
     }
 
+    //d) Metodo para validar si está en ejecucion
     public boolean isEnEjecucion(){
         return enEjecucion;
     }
+
+
 }
