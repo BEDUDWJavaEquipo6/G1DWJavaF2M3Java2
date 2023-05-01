@@ -1,40 +1,51 @@
+# Postwork Sesión 02: Cálculo de promedios mediante hilos 
 
-# :wave: Sesión 02: Multi Hilos y procesos concurrentes
+## 🎩 Objetivo 
 
-## 🎯  Objetivo de la sesión:
+- Practicar el uso de hilos con Java.
+- Calcular promedios a través de múltiples hilos en su proyecto.
 
-- Generar hilos y utilizar los pools
-- Implementar la interface Runnable
+## 🎯 Requisitos 
 
-## ⚙ Requisitos
-
-- MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
-- IntelliJ IDEA Community Edition
+- MySQL instalado y configurado
 - Apache Maven 3.8.4 o superior
 - JDK (o OpenJDK)
 
-## Objetivos 
+## 🚀 Desarrollo
 
-- Comprobar la diferencia entre un proceso y un hilo.
-- Utilizar la programación mediante el uso de hilos.
-- Analizar la clase Thread y la interfaz Runnable de Java.
+1. Agregamos al postwork anterior.
 
-## Organización de la clase 
+2. Generamos un nuevo package: *multithreading*.
 
-Java threads es la clase base de Java para definir hilos que se ejecutan dentro de un mismo programa; ahora se realizará la creación de hilos extendiendo la clase Thread.
+3. Creamos la clase *CalculadorPromedioCurso* que implementa un Runnable, su constructor deberá obtener el curso, con las calificaciones a promediar; además, el run deberá calcular el promedio y mostrar el resultado junto con el nombre del curso.
 
-- [Ejemplo 01](./Ejemplo-01/Readme.md)
-- [Reto 01](./Reto-01/Readme.md)
+   ![](images/Sesion2-_2-bfS8.png)
 
-La interfaz Runnable es la forma más normal para crear hilos; ahora se realizará la creación de hilos extendiendo la interface Thread.
+   ![](images/Sesion2-_4-bfS8.png)
 
-- [Ejemplo 02](./Ejemplo-02/Readme.md)
-- [Reto 02](./Reto-02/Readme.md)
+4. Además de una clase *Postwork2* la cual creá los cursos (cuatro como mínimo) con calificaciones aleatorias para cada uno de sus estudiantes. Como muestra dejaremos 20 estudiantes por curso.
 
-Un thread pool reutiliza los threads creados previamente para ejecutar tareas actuales y ofrece una solución al problema de la sobrecarga del ciclo de subprocesos y la hiperpaginación de recursos; ahora utilizarás los Thread Pools.
+   ![](images/Sesion2-_1-bfS8.png)
 
-- [Ejemplo 03](Ejemplo-03)
+5. Ejecutamos el Runnable con un ExecutorService. Donde cada hilo deberá calcular cada curso.
 
-Postwork
+   Utilizamos el siguiente código en terminal:
 
-- [Postwork](./Postwork/Readme.md)
+   ```
+   mvn spring-root:run
+   ```
+
+   ![](images/Sesion2-_3-bfS8.png)
+
+<br/>
+
+A continuación dejamos una imagen donde pueden visualizar el flujo general que tomará la aplicación.
+
+   ![diagrama1](images/diagrama1.png)
+
+<br/>
+REVISAR CONEXION
+
+[Regresar ](../Readme.md)(Sesión 02)
+
+[Siguiente ](../../Sesion-03/Readme.md)(Sesión 03)

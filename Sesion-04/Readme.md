@@ -1,39 +1,57 @@
+# Postwork Sesión 04: Inscripción de estudiantes
 
-# :wave:  Sesión 04: Procesos asíncronos
+## 🎩 Objetivo
 
-## 🎯  Objetivo de la sesión:
+- Aplicar los conocimientos de la programación asíncrona mediante un proyecto real.
+- Practicar el uso del EventLoop, a través de su uso para implementar un sistema de registro de alumnos.
 
-- Ejecutar múltiples procesos de forma paralela y esperar la respuesta o finalización de estos procesos.
+## 🎯 Requisitos
 
-## ⚙ Requisitos
-
-- MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
 - IntelliJ IDEA Community Edition
-- Apache Maven 3.8.4 o superior
 - JDK (o OpenJDK)
+- Postwork de la sesión 3
 
-## Objetivos 
+## 🚀 Desarrollo
 
-- Utilizar la programación asíncrona y la Non-Blocking API de Java.
-- Implementar la programación reactiva en Java.
+**Realizar en equipo**
 
-## Organización de la clase 
+El director de la escuela solicitó que implementen un sistema de inscripción de alumnos que notifique al maestro cuando un alumno se haya inscrito a un curso y además le muestre la cantidad de alumnos que tiene su curso sin bloquear la plataforma para que más estudiantes puedan inscribirse al mismo tiempo.
 
-Un proceso asíncrono es una función que ejecuta una tarea en segundo plano sin la necesidad de esperar a que finalice la tarea; ahora se realizarán un ejercicio y un ejemplo respecto al tema:
+Es por esto que han considerado que la implementación más fácil será mediante el uso de un **EventLoop** que reciba la información del alumno y el curso al que se quiere inscribir, notificando en un **worker** al maestro de la inscripción.
 
-- [Ejemplo 01](./Ejemplo-01/Readme.md) 
-- [Reto 01](./Reto-01/Readme.md) 
+Su tarea consiste en implementar el EventLoop necesario para esta plataforma, así como el worker que notifique al maestro.
 
-CompletableFuture se utiliza para la programación asíncrona en Java, tener este tipo de paralelismo mejora enormemente el rendimiento de sus programas; ahora se ejemplificará por medio de la recolección de información con CompletableFuture:
+El diagrama 1 muestra cómo sería el flujo del EventLoop
 
-- [Ejemplo 02](./Ejemplo-02/Readme.md)
-- [Reto 02](./Reto-02/Readme.md)
+![diagrama1](img/diagrama1.png)
 
-El Event loop es una cola de funciones, cada función devuelve un valor que la inserta en una cola o fila; ahora se practicará el Event loop:
+<br/>
 
-- [Ejemplo 03](./Ejemplo-03/Readme.md)
-- [Reto 03](./Reto-03/Readme.md)
+🚀 Instrucciones de uso.
 
-Postwork
+1. Descarga el archivo correspondiente al Postwork 4.
 
-- [Postwork](./Postwork/Readme.md)
+2. Ingresa al paquete **async.**
+
+3. Dentro de la clase **InscripcionAlumnos** modifica el método **CreaSolicitudes** con los cursos deseados.
+
+![diagrama2](img/creaSolicitudes.png)
+
+4. Modifica las características de los estudiantes que serán registrados.
+
+![diagrama3](img/generaEstudiantes.png)
+
+5. Ejecuta el método **main** contenido en la misma clase **InscripcionAlumnos.
+
+
+
+6. Observa en la consola la notificación de confirmación de cada estudiante en un curso específico.
+
+![diagrama4](img/Notificacion.png)
+
+<br/>
+      <br/>
+
+[Regresar ](../Readme.md)(Sesión 04)
+
+[Siguiente ](../../Sesion-05/Readme.md)(Sesión 05)

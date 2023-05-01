@@ -1,6 +1,5 @@
-target/**
-**/*target*
-Sesion-07/target/**
+target/classes
+**/*/target/**
 
 #Del Repo de Expert
 .vscode/
