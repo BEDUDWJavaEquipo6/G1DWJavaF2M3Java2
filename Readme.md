@@ -45,5 +45,5 @@ Java Intermedio
  - [Sesión 4: Procesos asincronos](./Sesion-04/Readme.md)
  - [Sesión 5: Stream Reactivos](./Sesion-05/Readme.md)
  - [Sesión 6: Clases Genéricas](./Sesion-06/Readme.md)
- - [Sesión 7: Microservicios](./Sesion-07/Readme.md)
+ - [Sesión 7: Microservicios](Sesion-07/Readme.md)
  - [Sesión 8: Buenas Practicas](./Sesion-08/Readme.md)
