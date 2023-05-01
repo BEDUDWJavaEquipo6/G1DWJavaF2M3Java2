@@ -4,6 +4,7 @@ import org.bedu.postwork.javase2project.model.Curso;
 import org.bedu.postwork.javase2project.model.Estudiante;
 import org.bedu.postwork.javase2project.model.Materia;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -57,6 +58,7 @@ class CursoRepositoryTest {
     }
 
     @Test
+    @DisplayName("Guarda un Curso")
     void guarda(){
         Curso curso = new Curso();
         curso.setCiclo('1');
@@ -66,6 +68,27 @@ class CursoRepositoryTest {
     }
 
     @Test
+    @DisplayName("Busca por Curso")
+    void searchMatchByNames() {
+
+        final char ciclo= '3';
+        Curso curso = new Curso();
+        curso.setCiclo(ciclo);
+        curso.setMaterias(materia);
+        Map<Estudiante, Integer> calificacion = new HashMap<>();
+        calificacion.put(estudiante,5);
+        curso.setCalificaciones(calificacion);
+        cursoRepository.save(curso);
+
+        Iterable<Curso> listaCursos = cursoRepository.findAllByCiclo(ciclo);
+        assertTrue(listaCursos.iterator().hasNext());
+
+        Curso cursoRecuperado = listaCursos.iterator().next();
+        assertEquals(curso, cursoRecuperado);
+
+    }
+    @Test
+    @DisplayName("Guarda una calificación")
     void guardaCalificaciones(){
         Curso curso = new Curso();
         curso.setCiclo('2');
@@ -82,6 +105,7 @@ class CursoRepositoryTest {
 
 
     @Test
+    @DisplayName("Guarda dos calificaciones")
     void guarda2Calificaciones(){
         Curso curso = new Curso();
         curso.setCiclo('4');

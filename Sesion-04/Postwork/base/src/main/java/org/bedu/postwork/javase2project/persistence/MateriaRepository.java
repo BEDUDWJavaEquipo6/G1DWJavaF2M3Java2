@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MateriaRepository extends CrudRepository<Materia, Long> {
+    Iterable<Materia> findAllByNombre(String materia);
 }

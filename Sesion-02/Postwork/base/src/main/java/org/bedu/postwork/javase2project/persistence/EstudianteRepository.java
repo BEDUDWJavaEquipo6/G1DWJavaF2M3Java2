@@ -6,4 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface EstudianteRepository extends CrudRepository<Estudiante, Long> {
     Estudiante findById(long id);
+    Iterable<Estudiante> findAllByNombreCompleto(String nombreEstudiante);
+
 }
