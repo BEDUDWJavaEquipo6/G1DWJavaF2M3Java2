@@ -1,45 +1,106 @@
-# :wave: Sesión 01: Gestión de bases de datos
 
-## 🎯  Objetivo de la sesión:
-- Conocer las distintas interfaces que Java proporciona para interactuar con las bases de datos
+# Postwork 01: Gestión de bases de datos
 
-## 🎯 Qué aprenderán
+## 🎩 Objetivo
 
-- Aprender a realizar consultas CRUD sobre la base de datos.
-- Comprender la complejidad de trabajar con entidades (base de
-datos) y objetos (POO/Java).
-- Conocer algunas herramientas para reducir el trabajo como ORM.
+- Practicar las consultas CRUD sobre la base de datos.
+- Crear las entidades y repositorios que usaremos para el proyecto.
 
-## ⚙ Requisitos
+## 🎯 Requisitos
 
-- MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
-- IntelliJ IDEA Community Edition
+- MySQL instalado y configurado
 - Apache Maven 3.8.4 o superior
 - JDK (o OpenJDK)
 
-## 🎩  Objetivos 
+## 🚀 Desarrollo
 
-- Que el alumno aprenda las interfaces para conectarse y hacer consultas a una base de datos.
-- Comprender el modelo de abstracción usado en Java para las bases de datos.
-- Aprender las ventajas de usar un ORM y JPA.
+1. Se clonó el proyecto de la carpeta [base]
 
-## Organización de la clase 
+2. A partir de los diagramas se generaron las entidades/modelosdel proyecto.
 
-Spring Data JPA es un complemento que proporciona un framework que funciona con JPA y proporciona una abstracción completa sobre la capa de acceso a datos, incorpora el concepto de repositorios JPA y un conjunto de interfaces que define los métodos de consulta. Ahora se realizará la creación y configuración de una base de datos y conexión mediante Spring Data JPA.
+    ![Clases](images/Diagrama_de_clases.png)
 
-- [Ejemplo 01](./Ejemplo-01/Readme.md)
-- [Reto 01](./Reto-01/Readme.md)
+    ![ER](images/Diagrama_ER.png)
 
-Una entidad es algo elemental para comprender JPA. Es una clase POJO (Objeto Java Plano Antiguo) que proporciona un método constructor por defecto, no debe ser final y debe implementar Serializable para accesos remotos. Se trata de un conjunto de estados asociados juntos en una unidad. Ahora se realizará la creación de entidades y repositorios.
+    a. Curso
+    
+    b. Estudiante
+    
+    c. Materia
 
-- [Ejemplo 02](./Ejemplo-02/Readme.md)
-- [Reto 02](./Reto-02/Readme.md)
-	
-JUnit es un framework para la automatización de las pruebas en los proyectos  de software, por medio de éste se proporcionan herramientas, clases y métodos que le facilitan las pruebas y aseguran su consistencia y funcionalidad. Ahora se realizarán las pruebas de integración a reposotorios con JUnit.
+3. También generaron los repositorios correspondientes:
 
-- [Ejemplo 03](./Ejemplo-03/Readme.md)
-- [Reto 03](./Reto-03/Readme.md)
+    a. CursoRepository
+    
+    b. EstudianteRepository
 
-Postwork
+    c. MateriaRepository
 
-- [Postwork](./Postwork/Readme.md)
+Ejecuta el proyecto con el comando:
+```
+mvn spring-boot:run
+```
+
+   ![Salida del comando enejecuión](images/Sesion1-mvnSpring-boot-run1-bsfS8.png)
+
+   ![Estructura de archivos del proyecto](images/Sesion1-mvnSpring-boot-run2-bsfS8.png)
+
+4. Se generaron los siguientes casos de prueba:
+
+    - Crear y almacenar (Por lo menos uno de cada uno):
+        - Estudiante
+        - Materia
+        - Curso
+        
+    - Una vez creado el curso, agregar la calificación del estudiante.
+
+ Ejecutamos las pruebas con los siguientes comandos:
+
+```
+mvn test
+```
+![All Tests at once](images/Sesion1-mvn-testAll1-bsfS8.png)
+```
+mvn test -D "MateriaRepositoryTest"
+```
+![MateriaRepositoryTest](images/Sesion1-mvn-testMateriaRespositoryTest1-bsfS8.png)
+![MateriaRepositoryTest](images/Sesion1-mvn-testMateriaRespositoryTest2-bsfS8.png)
+![MateriaRepositoryTest](images/Sesion1-mvn-testMateriaRespositoryTest3-bsfS8.png)
+```
+mvn test -D "EstudianteRepositoryTest"
+```
+![](images/Sesion1-mvn-testEstudianteRespositoryTest1-bsfS8.png)
+![](images/Sesion1-mvn-testEstudianteRespositoryTest2-bsfS8.png)
+![](images/Sesion1-mvn-testEstudianteRespositoryTest3-bsfS8.png)
+```
+mvn test -D "CursoRepositoryTest"
+```
+![](images/Sesion1-mvn-testCursoRespositoryTest1-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest2-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest3-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest4-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest5-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest6-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest7-bsfS8.png)
+
+![](images/Sesion1-mvn-testCursoRespositoryTest8-bsfS8.png)
+5. Para finalizar, se recomienda que como equipo busquen información sobre las siguientes anotaciones. 
+REVISAR Y AGREGAR INFO
+    - @ElementCollection
+    
+    - @CollectionTable
+    
+    - @MapKeyJoinColumn.
+
+<br/>
+<br/>
+REVISAR CONEXION CON MENU PRIN
+[Regresar ](../Readme.md)(Sesión 01)
+
+[Siguiente ](../../Sesion-02/Readme.md)(Sesión 02)

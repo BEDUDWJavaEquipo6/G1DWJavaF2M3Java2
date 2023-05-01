@@ -1,37 +1,127 @@
-# :wave:  Sesión 07: Microservicios
+# Postwork 07: Microservicios
 
-## 🎯  Objetivo de la sesión:
+## 🎩 Objetivo
 
- - Conocer el concepto de microservicios.
- - Conocer la motivación de los microservicios.
- - Tamaño de un microservicio.
- - Frameworks para crear microservicios.
- - Comunicación de los microservicios
- - Reactive en microservicios
+- Realizar microservicios a un servidor de MongoDB, para almacenar y consultar registros alojados en la base de datos.
+## 🎯 Requisitos 
 
-## ⚙ Requisitos
-
-- MongoDB o MongoDB Atlas
+- MongoDB Atlas
 - IntelliJ IDEA Community Edition
-- Apache Maven 3.8.4 o superior
 - JDK (o OpenJDK)
+- Reto 03
 
-## Organización de la clase 
+## 🚀 Desarrollo
 
-- Usar MicroProfile para crear un microservicio
+1. En el archivo **pom.xml** agregamos la dependencia ``mongodb-reactive``` al inicio de las dependencias:
 
-	- [Ejemplo 01](./Ejemplo-01/Readme.md)
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+    </dependency>
+    ```
 
-- Usar Spring boot para crear un microservicio
+2. En MongoDB Atlas creamos una base de datos y una coleccion llamada "empleado"
 
-	- [Ejemplo 02](./Ejemplo-02/Readme.md)
-	- [Reto 01](./Reto-01/Readme.md)
+3. Modificamos la clase EmpleadoRepository que traiamos del Reto3 como una interfaz extendida de ``` ReactiveMongoRepository```:
 
-- Usar Spring boot WebFlux para crear un microservicio
+    ```java
+    package com.example.demo.repository;
 
-	- [Ejemplo 03](./Ejemplo-03/Readme.md)
-	- [Reto 02](./Reto-02/Readme.md)
+    import com.example.demo.entity.Empleado;
+    import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+    import org.springframework.stereotype.Repository;
 
+    @Repository
+    public interface EmpleadoRepository extends ReactiveMongoRepository<Empleado, String>{
 
-- Postwork
-	- [Postwork](../Postwork/Readme.md)
+    }
+    ```
+
+5. Ahora generamos el uri de conexión de MongoAtlas, al archivo **application.properties** lo encontrarás dentro de **resources**.
+
+    ```properties
+    spring.data.mongodb.uri=mongodb+srv://<user>:<password>@cluster0.ijbvb.mongodb.net/empleado?retryWrites=true&w=majority
+    ```
+7. Agregamos los métodos al Controlador EmpleadoController
+
+   ```java
+   @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    private Flux<Empleado> getAllEmpleados(){
+        return empleadoRepository.findAll();
+    }
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    private Mono<Empleado> getEmpleadoById(@PathVariable("id") String id){
+        return empleadoRepository.findById(id);
+    }
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    private Mono<Empleado> createEmpleado(@RequestBody Empleado empleado){
+        return empleadoRepository.save(empleado);
+    }
+   /*@PutMapping("/update/{id}")
+   @ResponseStatus(HttpStatus.OK)
+    private Mono<Empleado> putEmpleado(@PathVariable("id") String id,@RequestBody Empleado empleado){
+        return empleadoRepository.update(empleado);
+    }*/
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    private Mono<Void> deleteEmpleado(@PathVariable("id") String id){
+        return empleadoRepository.deleteById(id);
+    }
+    @DeleteMapping("/delete")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    private Mono<Void> deleteAllEmpleados(){
+        return empleadoRepository.deleteAll();
+    }
+   ```
+   
+8. probamos los endpoints creados en MongoDB Atlas.
+
+    - Crear empleados POST GET http://localhost:8080/empleados/update createEmpleado
+
+        ![postEmpleado](images/Sesion7-Post-bfS8.png)
+      ![Dos postEmpleado](images/Sesion7-Posts-bfS8.png)
+
+    - Consultar todos los empleados GET http://localhost:8080/empleados  getAllEmpleados
+    
+        ![getAllEmpleados](images/Sesion7-GetALL-bfS8.png)
+
+    - Consultar empleado por id GET http://localhost:8080/empleados/#  getEmpleadoById
+    
+        ![getEmpeladoById](images/Sesion7-GetEmpleadoById-bfS8.png)
+    - Borrar un empleado por id DEL http://localhost:8080/delete/#  deleteEmpleadoById
+
+        ![delEmpeladoById](images/Sesion7-DelEmpleadoById-bfS8.png)
+    - Borrar todos los empleados DEL http://localhost:8080/delete  delAllEmpleados
+
+        ![delAllEmpelados](images/Sesion7-DeleteAll-bfS8.png)
+        ![getAllEmpelados luego de un deleteAllEmpleados](images/Sesion7-GetAll-AfterUnDeleteAll-bfS8.png)
+
+    - Desde Compass observamos los documentos/registros en MongoDB Atlas
+
+        ![En_compass](images/Sesion7-Compass-bfS8.png)
+        ![Compass despues de un DeleteAll](images/CompassDespuesUnDeleteAll.png)
+
+<br/>
+
+## ✅ Checklist 
+
+Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará al término del módulo.
+
+- [✅] El proyecto no muestra warnings ni errores durante su ejecución.
+- [✅] El proyecto logra conectarse al servidor de MongoDB.
+- [✅] Es posible registrar un empleado con POST al API.
+- [✅] Es posible consultar todos los empleados con GET.
+- [✅] Es posible consultar un empleado por su ID con GET.
+- [✅] Es posible eliminar un empleado por su ID con DEL.
+- [✅] Es posible eliminar todos los empleados con DEL.
+
+<br/>
+REVISAR ANTES DE ENTREGAR
+[Regresar ](../Readme.md)(Sesión 07)
+
+[Siguiente ](../Sesion-08/Readme.md)(Sesión 08)

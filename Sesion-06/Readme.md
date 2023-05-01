@@ -1,34 +1,61 @@
-# :wave:  Sesión 06: Clases genéricas
+# Postwork 06: Clases genéricas
 
-## 🎯  Objetivo de la sesión:
+## 🎩 Objetivo
 
-- Entender la necesidad de Generics
-- Conocer el uso de Generics
-- Entender el proceso de *Type Erasure* que hace el compilador
+- Aplicar los conocimientos de Generics implementanco un MergeSortAlgorithm
 
-## ⚙ Requisitos
+## 🚀 Desarrollo
 
-- MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
-- IntelliJ IDEA Community Edition
-- Apache Maven 3.8.4 o superior
-- JDK (o OpenJDK)
+Uno de los principales usos de Generics es poder implementar algoritmos independientes de sus parámetros.
 
-## Organización de la clase 
+Revisamos la del algoritmo [Merge Sort](https://www.tutorialspoint.com/data_structures_algorithms/merge_sort_algorithm.htm)
+para hacer implementación del algoritmo dentro del package tools en la clase MergeSortAlgorithm.
 
-- Clases genéricas
+<br/>
 
-	- [Ejemplo 01](./Ejemplo-01/Readme.md)
-	- [Reto 01](./Reto-01/Readme.md)
-	
- - Métodos Genéricos
+1. Que se  encargará de ordenar de dos maneras diferentes y mezclar los dos ordenamientos.
 
-	- [Ejemplo 02](./Ejemplo-02/Readme.md)
-	- [Reto 02](./Reto-02/Readme.md)
-	
- - Límites superiores e inferiores
+2. El primer método de ordenamiento será con Comparable<t>.
 
-	- [Ejemplo 03](./Ejemplo-03/Readme.md)
-	- [Reto 03](./Reto-03/Readme.md)
+3. El segundo ordenamiento será con List<T>.
 
-- Postwork
-	- [Postwork](././Postwork/Readme.md)
+4. Un método  merge que mezclará las listas ordenadas.
+
+5. Se agregaron los test para la clase MergeSortAlgorithm.
+
+    - Donde generamos una colección con cien mil números aleatorios y dos test: 
+    
+        - Ordenar una colección de enteros
+        
+        - Ordenar una colección con un comparador
+
+6. Ejecutamos los test con el siquiente commando:
+```
+   mvn test -Dtest="MergeSortAlgorithmTest"
+``` 
+Adjuntamos la respuesta del mismo:
+   ![Prueba Sesion6 MergeSortAlgorithmTest
+   ](images/Sesion6_bfS8.png)
+
+<br/>
+
+## ✅ Checklist 
+
+Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará al término del módulo.
+
+- [✅] MergeSortAlgorithm tiene un método que ordena por números números naturales con un Comparable<t>.
+
+- [✅] La clase MergeSortAlgorithm contiene un método que ordena una colección con un comparador.
+
+- [✅] MergeSortAlgorithm tiene un método para mezclar los dos tipos de ordenamiento.
+
+- [✅] La prueba MergeSortAlgorithmTest genera y agreguen cien mil números aleatorios a una lista.
+
+- [✅] Existen dos test para ejecutar los dos tipos de sort creados en la clase MergeSortAlgorithm.
+
+<br/>
+RECUERDA REVISAR ANTES DE ENTREGAR QUE ESTAS LIGAS FUNCIONEN
+
+[Regresar ](Postwork/Readme.md)(Sesión 06)
+
+[Siguiente ](../../Sesion-07/Readme.md)(Sesión 07)

@@ -1,5 +1,6 @@
 target/**
-**/*/target/**
+**/*target*
+Sesion-07/target/**
 
 #Del Repo de Expert
 .vscode/
