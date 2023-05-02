@@ -69,6 +69,6 @@ Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará 
 <br/>
 <br/>
 
-[Regresar ](../Readme.md)(Sesión 05)
+[Regresar ](../Sesion-04/Readme.md)(Sesión 04)
 
-[Siguiente ](../../Sesion-06/Readme.md)(Sesión 06)adme.md)
+[Siguiente ](../Sesion-06/Readme.md)(Sesión 06)
