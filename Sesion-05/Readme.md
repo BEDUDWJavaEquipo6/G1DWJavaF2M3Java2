@@ -1,31 +1,74 @@
+# Postwork 05: Programación reactiva
 
-# :wave:  Sesión 05: Streams Reactivos
+## 🎩 Objetivo
 
-## 🎯  Objetivo de la sesión:
+- Aplicar los conocimientos de Streams Reactivos mediante un proyecto real.
+- A lo largo de este proyecto reafirmaremos lo que se ha aprendido durante las sesiones.
 
- - Conocer la motivación de la Programación Reactiva.
- - Conocer las opciones existentes para programación reactiva en java.
+## 🎯 Requisitos
 
-## ⚙ Requisitos
-
-- MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
 - IntelliJ IDEA Community Edition
-- Apache Maven 3.8.4 o superior
 - JDK (o OpenJDK)
+- Postwork de la sesión anterior
 
-## Organización de la clase 
+## 🚀 Desarrollo
 
-- Usando las interfaces de RxJava
-	- [Ejemplo 01](./Ejemplo-01/Readme.md)
-	- [Reto 01](./Reto-01/Readme.md)
+**Realizar en equipo**
 
-- Usando las interfaces de Project Reactor
-	- [Ejemplo 02](./Ejemplo-02/Readme.md)
-	- [Reto 02](./Reto-02/Readme.md)
+Completen las siguientes instrucciones para completar el quinto postwork:
 
-- Modificando un Flux en un servicio intermedio
-	- [Ejemplo 03](./Ejemplo-03/Readme.md)
-	- [Reto 03](./Reto-03/Readme.md)
+1. Utilicen el proyecto del postwork 4.
 
-- Postwork
-	- [Postwork](./Postwork/Readme.md)
+2. Crea un nuevo package con el nombre de reactive
+
+3. Dentro del nuevo package generen la clase CalcularPromedioCursoRx, dentro agreguen un método para calcular el promedio de las calificaciones de un curso.
+
+	- Recuerden utilizar publisher:
+
+		- Flux
+
+		- Mono
+
+4. Agreguen el test para CalcularPromedioCursoRx, la cual:
+
+	- Generará estudiantes (Por lo menos 3).
+
+	- Una Materia y un Curso.
+
+	- Agregará la materia y los estudiantes al curso, con sus respectivas calificaciones.
+
+	- Calculará el promedio ejecutando el método creado en el paso tres.
+
+	- Recuerda utilizar **Streams paralelos** y **Programación reactiva**.
+
+<br/>
+
+### 🚀 Instrucciones de uso.
+1. Descarga el código correspondiente al Postwork 5.
+
+
+2. Ejecuta las pruebas desarrolladas en la clase **CalcularPromedioCursoRxTest**.
+
+
+3. Observa los resultados satisfactorios de las pruebas realizadas.
+   ![Prueba Sesion6 MergeSortAlgorithmTest
+   ](img/prueba-existosa.png)
+
+## ✅ Checklist
+
+Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará al término del módulo.
+
+- [ ] CalcularPromedioCursoRx puede calcular los promedios de un curso, utilizando Flux y Mono de publisher.
+
+- [ ] CalcularPromedioCursoRxTest generá por lo menos tres estudiantes y una materia y un curso.
+
+- [ ] CalcularPromedioCursoRxTest calcula el promedio de un curso ejecutando el método generado en el paso tres con la ayuda de publisher.
+
+- [ ] El código generado utiliza Streams paralelos y Programación reactiva.
+
+<br/>
+<br/>
+
+[Regresar ](../Readme.md)(Sesión 05)
+
+[Siguiente ](../../Sesion-06/Readme.md)(Sesión 06)adme.md)

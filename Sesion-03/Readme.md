@@ -1,5 +1,5 @@
 
-# :wave: Sesión 03: Programación Funcional
+# Sesión 03: Programación Funcional
 
 ## 🎯  Objetivo de la sesión:
 
