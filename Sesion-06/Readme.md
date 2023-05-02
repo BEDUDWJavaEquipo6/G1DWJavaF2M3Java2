@@ -29,11 +29,16 @@ para hacer implementación del algoritmo dentro del package tools en la clase Me
         
         - Ordenar una colección con un comparador
 
-6. Ejecutamos los test con el siquiente commando:
+### 🚀 Instrucciones de uso.
+
+1. Ejecuta los test con el siquiente commando:
 ```
    mvn test -Dtest="MergeSortAlgorithmTest"
 ``` 
-Adjuntamos la respuesta del mismo:
+
+2. Observa los resultados de los test correspondientes:
+
+
    ![Prueba Sesion6 MergeSortAlgorithmTest
    ](images/Sesion6_bfS8.png)
 
@@ -54,8 +59,8 @@ Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará 
 - [✅] Existen dos test para ejecutar los dos tipos de sort creados en la clase MergeSortAlgorithm.
 
 <br/>
-RECUERDA REVISAR ANTES DE ENTREGAR QUE ESTAS LIGAS FUNCIONEN
 
-[Regresar ](Postwork/Readme.md)(Sesión 06)
 
-[Siguiente ](../../Sesion-07/Readme.md)(Sesión 07)
+[Regresar ](../Sesion-05/Readme.md)(Sesión 05)
+
+[Siguiente ](../Sesion-07/Readme.md)(Sesión 07)

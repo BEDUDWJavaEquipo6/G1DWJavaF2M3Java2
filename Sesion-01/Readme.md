@@ -14,7 +14,8 @@
 
 ## 🚀 Desarrollo
 
-1. Se clonó el proyecto de la carpeta [base]
+1. Se clonó el proyecto de la carpeta [base].
+
 
 2. A partir de los diagramas se generaron las entidades/modelosdel proyecto.
 
@@ -36,7 +37,13 @@
 
     c. MateriaRepository
 
-Ejecuta el proyecto con el comando:
+### 🚀 Instrucciones de uso.
+
+1. Descarga el archivo correspondiente al Postwork 4.
+
+
+
+2. Ejecuta el proyecto con el comando:
 ```
 mvn spring-boot:run
 ```
@@ -45,7 +52,7 @@ mvn spring-boot:run
 
    ![Estructura de archivos del proyecto](images/Sesion1-mvnSpring-boot-run2-bsfS8.png)
 
-4. Se generaron los siguientes casos de prueba:
+3. Analiza los casos de prueba desarrollados:
 
     - Crear y almacenar (Por lo menos uno de cada uno):
         - Estudiante
@@ -54,12 +61,15 @@ mvn spring-boot:run
         
     - Una vez creado el curso, agregar la calificación del estudiante.
 
- Ejecutamos las pruebas con los siguientes comandos:
+
+4. Ejecuta las pruebas con los siguientes comandos:
 
 ```
 mvn test
 ```
 ![All Tests at once](images/Sesion1-mvn-testAll1-bsfS8.png)
+
+5. Observa los resultados de cada prueba ejecutada.
 ```
 mvn test -D "MateriaRepositoryTest"
 ```
@@ -90,17 +100,17 @@ mvn test -D "CursoRepositoryTest"
 ![](images/Sesion1-mvn-testCursoRespositoryTest7-bsfS8.png)
 
 ![](images/Sesion1-mvn-testCursoRespositoryTest8-bsfS8.png)
-5. Para finalizar, se recomienda que como equipo busquen información sobre las siguientes anotaciones. 
-REVISAR Y AGREGAR INFO
-    - @ElementCollection
-    
-    - @CollectionTable
-    
+
+6. Para finalizar, recuerda la siguiente información.
+    - @ElementCollection:
+Nos permite guardar una lista de valores en forma de entidad.     
+    - @CollectionTable:
+Especifica la tabla que se usa para realizar el *map* de una colección de atributos básicos.    
     - @MapKeyJoinColumn.
+Especifica el *mapping* hacia una entidad que representa la llave.  
 
 <br/>
 <br/>
-REVISAR CONEXION CON MENU PRIN
-[Regresar ](../Readme.md)(Sesión 01)
 
-[Siguiente ](../../Sesion-02/Readme.md)(Sesión 02)
+
+[Siguiente ](../Sesion-02/Readme.md)(Sesión 02)

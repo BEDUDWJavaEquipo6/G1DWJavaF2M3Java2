@@ -27,7 +27,7 @@ El diagrama 1 muestra cómo sería el flujo del EventLoop
 
 <br/>
 
-🚀 Instrucciones de uso.
+### 🚀 Instrucciones de uso.
 
 1. Descarga el archivo correspondiente al Postwork 4.
 
@@ -52,6 +52,6 @@ El diagrama 1 muestra cómo sería el flujo del EventLoop
 <br/>
       <br/>
 
-[Regresar ](../Readme.md)(Sesión 04)
+[Regresar ](../Sesion-03/Readme.md)(Sesión 03)
 
-[Siguiente ](../../Sesion-05/Readme.md)(Sesión 05)
+[Siguiente ](../Sesion-05/Readme.md)(Sesión 05)
