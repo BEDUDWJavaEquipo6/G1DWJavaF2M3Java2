@@ -1,39 +1,50 @@
+# Postwork 03
 
-# Sesión 03: Programación Funcional
+## 🎩 Objetivo
 
-## 🎯  Objetivo de la sesión:
+- Practicar lo aprendido sobre programación funcional.
+- Hacer uso de la programación funcional para generar y ordenar una lista de datos (descendente y ascendente).
 
-- Aplicar el paradigma de programación funcional
-- Utilizar las características funcionales de Java
+## 🎯 Requisitos
 
-## ⚙ Requisitos
-
-- MySQL (o MariaDB) en el equipo y tener las credenciales de _root_
-- IntelliJ IDEA Community Edition
+- MySQL instalado y configurado
 - Apache Maven 3.8.4 o superior
 - JDK (o OpenJDK)
 
-## Objetivos 
+## 🚀 Desarrollo
 
-- Aplicar el paradigma de programación funcional
-- Utilizar las características funcionales de Java
+1. Sobre el postwork 2, creamos un nuevo package con el nombre de **tools**
+y en el, la clase **ReporteCalificaciones** que se encarga de:
 
-## Organización de la clase
+    - Generar la lista
+    - Ordenar alfabéticamente (Curso)
+    - Ordenar por calificaciones (Descendente)
+    - utilizando ***map, sort, collect**
 
-Las interfaces funcionales tienen un método específico a implementar, es decir, cada interfaz se convierte en una interfaz funcional; ahora se analizarán las interfaces funcionales:
+2. También se generaron las pruebas **ReporteCalificacionesTest** para generar:
+que ejecutamos con el comando: 
 
-- [Ejemplo 01](./Ejemplo-01/Readme.md)
-- [Reto 01](./Reto-01/Readme.md)
+   ```
+   mvn test
+   mvn test -D "ReporteCalificacionesTest"
+   ```
 
-Las High Order Functions o funciones de orden superior son funciones que operan sobre otras funciones, mediante argumentos o devolviéndolas; ahora se practicarán las High Order Functions:
+   Estas pruebas generan:
 
-- [Ejemplo 02](./Ejemplo-02/Readme.md)
-- [Reto 02](./Reto-02/Readme.md)
+    - Materia
+    - Estudiantes (Por lo menos tres)
+    - Curso
+    - Enviar la información a la clase creada en el paso tres
+    - Ordena alfabéticamente (Curso)
 
-Los Streams se aplican de forma unitaria de elemento a elemento, diseñando un flujo de trabajo; ahora se practicarán los Streams:
+   ![](images/prueba%20exitosa%20lista%20alumnos%20por%20calificacion%20descendente.png) 
+   
+    - Ordena por calificaciones (Descendente)
 
-- [Ejemplo 03](./Ejemplo-03/Readme.md)
+   ![](images/prueba%20exitosa%20lista%20alumnos%20por%20calificacion%20descendente.png)
+    
+<br/>
 
-Postwork
+[Regresar ](../Readme.md)(Sesión 02)
 
-- [Postwork](./Postwork/Readme.md)
+[Siguiente ](../Sesion-04/Readme.md)(Sesión 04)
