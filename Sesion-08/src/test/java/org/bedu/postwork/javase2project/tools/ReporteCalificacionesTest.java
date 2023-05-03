@@ -53,12 +53,12 @@ class ReporteCalificacionesTest {
 
     @Test
     void ListaAlumnosporCalificacion(){
-        assertThat(reporteCalificaciones.listaAlumnosPorCalificacion(curso)).contains(entry("Fulanito", 10),
+        assertThat(reporteCalificaciones.listaAlumnosPorCalificacion(curso)).containsExactly(entry("Fulanito", 10),
                 entry("Perenganito", 9),entry("Menganito", 8));
     }
     @Test
     void listaAlumnosPorEstudiantes(){
-        assertThat(reporteCalificaciones.listaAlumnosPorEstudiantes(curso)).contains(entry("Fulanito", 10),
+        assertThat(reporteCalificaciones.listaAlumnosPorEstudiantes(curso)).containsExactly(entry("Fulanito", 10),
                 entry("Menganito", 8),entry("Perenganito", 9));
     }
 
