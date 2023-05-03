@@ -12,3 +12,4 @@ public interface CursoRepository extends CrudRepository<Curso, Long> {
     Curso findById(long id);
     Iterable<Curso> findAllByCiclo(char ciclo);
 }
+
