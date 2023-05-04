@@ -61,7 +61,7 @@ class CursoRepositoryTest {
     @DisplayName("Guarda un Curso")
     void guarda(){
         Curso curso = new Curso();
-        curso.setCiclo('1');
+        curso.setCiclo("1");
         curso.setMaterias(materia);
         curso = cursoRepository.save(curso);
         assertNotNull(curso.getId());
@@ -71,7 +71,7 @@ class CursoRepositoryTest {
     @DisplayName("Busca por Curso")
     void searchMatchByNames() {
 
-        final char ciclo= '3';
+        final String ciclo= "3";
         Curso curso = new Curso();
         curso.setCiclo(ciclo);
         curso.setMaterias(materia);
@@ -91,7 +91,7 @@ class CursoRepositoryTest {
     @DisplayName("Guarda una calificación")
     void guardaCalificaciones(){
         Curso curso = new Curso();
-        curso.setCiclo('2');
+        curso.setCiclo("2");
         curso.setMaterias(materia);
 
         Map<Estudiante, Integer> calificacion = new HashMap<>();
@@ -108,7 +108,7 @@ class CursoRepositoryTest {
     @DisplayName("Guarda dos calificaciones")
     void guarda2Calificaciones(){
         Curso curso = new Curso();
-        curso.setCiclo('4');
+        curso.setCiclo("4");
         curso.setMaterias(materia);
 
         Map<Estudiante, Integer> calificacion = new HashMap<>();

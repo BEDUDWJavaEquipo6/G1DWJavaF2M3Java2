@@ -40,7 +40,7 @@ class ReporteCalificacionesTest {
         estudiante1.setNombreCompleto("Fulanito");
         estudiante2.setNombreCompleto("Menganito");
         estudiante3.setNombreCompleto("Perenganito");
-        curso.setCiclo('1');
+        curso.setCiclo("1");
         curso.setMaterias(materia);
 
         Map<Estudiante, Integer> calificacion = new HashMap<>();

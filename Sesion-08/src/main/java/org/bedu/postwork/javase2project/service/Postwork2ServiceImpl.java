@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -21,10 +22,11 @@ public class Postwork2ServiceImpl implements Postwork2Service {
     }
 
     @Override
-    public Curso CrearCurso(Curso curso, String nombreMateria, String nombreAlumno, char ciclo) {
+    public Curso CrearCurso(Curso curso, String nombreMateria,
+                            Map<String, Integer> estudianteConCalificacion, String ciclo) {
         curso.setCiclo(ciclo);
         curso.setMaterias(creadorService.guardaMateria(CrearMateria(nombreMateria)));
-        curso.setCalificaciones(generadorCalificaciones(nombreAlumno));
+        curso.setCalificaciones(generadorCalificaciones(estudianteConCalificacion));
         return creadorService.guardaCurso(curso);
     }
 
@@ -43,13 +45,13 @@ public class Postwork2ServiceImpl implements Postwork2Service {
     }
 
     @Override
-    public Map<Estudiante, Integer> generadorCalificaciones(String nombreAlumno) {
-        Random random = new Random();
+    public Map<Estudiante, Integer> generadorCalificaciones(Map<String, Integer> estudianteConCalificacion) {
         Map<Estudiante, Integer> calificacion = new HashMap<>();
-        for (int i=0; i<5; i++){
-            calificacion.put(creadorService.guardaEstudiante(CrearEstudiante(nombreAlumno + i)),
-                    random.nextInt(10) + 1);
-        }
+        estudianteConCalificacion.entrySet().stream()
+                .forEach(e ->
+                        calificacion.put(
+                                creadorService.guardaEstudiante(CrearEstudiante(e.getKey())),e.getValue())
+                );
         return calificacion;
     }
 }

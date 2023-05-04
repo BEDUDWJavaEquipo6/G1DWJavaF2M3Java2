@@ -15,7 +15,7 @@ public class Curso {
 
     @Column(name = "ciclo")
     @Size(max = 4)
-    private char ciclo;
+    private String ciclo;
 
     @ManyToOne
     @JoinColumn(name = "materias_fk", referencedColumnName = "id")
@@ -35,11 +35,11 @@ public class Curso {
         this.id = id;
     }
 
-    public char getCiclo() {
+    public String getCiclo() {
         return ciclo;
     }
 
-    public void setCiclo(char ciclo) {
+    public void setCiclo(String ciclo) {
         this.ciclo = ciclo;
     }
 
