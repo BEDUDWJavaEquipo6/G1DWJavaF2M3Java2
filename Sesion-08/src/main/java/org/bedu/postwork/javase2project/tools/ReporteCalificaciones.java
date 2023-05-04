@@ -3,7 +3,9 @@ package org.bedu.postwork.javase2project.tools;
 import org.bedu.postwork.javase2project.model.Curso;
 import org.bedu.postwork.javase2project.model.Estudiante;
 import org.bedu.postwork.javase2project.model.Materia;
-import org.bedu.postwork.javase2project.service.CreadorService;
+import org.bedu.postwork.javase2project.service.CursoService;
+import org.bedu.postwork.javase2project.service.EstudianteService;
+import org.bedu.postwork.javase2project.service.MateriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,10 +19,12 @@ import java.util.stream.StreamSupport;
 @Component
 public class ReporteCalificaciones {
     @Autowired
-    private CreadorService creadorService;
+    private MateriaService materiaService;
+    private CursoService cursoService;
+    private EstudianteService estudianteService;
 
     public List<String> listaMaterias(){
-        Iterable<Materia> materias = creadorService.getMateria();
+        Iterable<Materia> materias = materiaService.getMateria();
 
        List<String> listaMateria = StreamSupport.stream(materias.spliterator(), false)
                 .map(Materia::getNombre)
