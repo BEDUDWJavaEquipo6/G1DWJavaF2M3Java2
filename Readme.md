@@ -16,6 +16,10 @@
 
     Las instrucciones de uso se encuentran dentro de cada sesión
 
+### Plataforma:
+    
+    Maven, IntelliJ con Java SDK, Spring-Boot
+
 ### Contenido
 
  - [1: Gestión de base de datos](./Sesion-01/Readme.md)
