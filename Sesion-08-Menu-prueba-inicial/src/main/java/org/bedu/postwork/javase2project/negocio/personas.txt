@@ -1,0 +1,6 @@
+1;calculo
+susana;8
+jaime;10
+elias;9
+fabian;4
+luis;5
