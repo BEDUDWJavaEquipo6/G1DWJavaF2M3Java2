@@ -15,16 +15,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @SpringBootApplication
-public class Javase2ProjectApplication implements CommandLineRunner {
-
+public class Javase2ProjectApplication /*implements CommandLineRunner */{
+	/*
 	@Autowired
 	private Postwork2 postwork2;
-
+	*/
 	public static void main(String[] args) {
 		SpringApplication.run(Javase2ProjectApplication.class, args);
 
 	}
-
+	/*
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -54,5 +54,5 @@ public class Javase2ProjectApplication implements CommandLineRunner {
 
 		System.out.println("Estado del pool después de apagar: isShutdown()=" + pool.isShutdown() + ", isTerminated()=" + pool.isTerminated());
 
-	}
+	}*/
 }
