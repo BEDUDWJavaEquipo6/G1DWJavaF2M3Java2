@@ -22,6 +22,7 @@
  - [6: Clases Genéricas](./Sesion-06/Readme.md)
  - [7: Microservicios](Sesion-07/Readme.md)
  - [8: Buenas Practicas](./Sesion-08/Readme.md)
+ - [8: Buenas Practicas con Menu en CommandLineRunner](./Sesion-08-Menu-prueba-inicial/Readme.md )
 
 ##  Enlaces
 
