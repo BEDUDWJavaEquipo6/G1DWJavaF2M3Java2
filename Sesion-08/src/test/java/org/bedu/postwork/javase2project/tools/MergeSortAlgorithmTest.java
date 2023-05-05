@@ -29,14 +29,17 @@ class MergeSortAlgorithmTest {
 
     @BeforeEach
     void setup() {
+
         unsorted = IntStream.rangeClosed(0, COLLECTION_SIZE)
                 .mapToObj(i -> RANDON_GENERATOR.nextInt())
                 .collect(Collectors.toList());
+
     }
 
     @Test
     @DisplayName("Ordena una colección de enteros")
     void sortsIntegerCollection() {
+        System.out.println("MegeSortTestingSetup-enteros");
         List<Integer> sorted = MergeSortAlgorithm.sort(unsorted);
 
         assertThat(sorted.size()).isEqualTo(unsorted.size());

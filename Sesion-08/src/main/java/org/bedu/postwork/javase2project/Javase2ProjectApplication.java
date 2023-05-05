@@ -22,6 +22,7 @@ public class Javase2ProjectApplication /*implements CommandLineRunner */{
 	*/
 	public static void main(String[] args) {
 		SpringApplication.run(Javase2ProjectApplication.class, args);
+		System.out.println("\n*** System Up and Running ***");
 
 	}
 	/*
