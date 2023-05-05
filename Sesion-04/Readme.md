@@ -50,8 +50,9 @@ El diagrama 1 muestra cómo sería el flujo del EventLoop
 ![diagrama4](img/Notificacion.png)
 
 <br/>
-      <br/>
 
 [Regresar ](../Sesion-03/Readme.md)(Sesión 03)
 
 [Siguiente ](../Sesion-05/Readme.md)(Sesión 05)
+
+[Regresar a root ](../Readme.md)(Principal)

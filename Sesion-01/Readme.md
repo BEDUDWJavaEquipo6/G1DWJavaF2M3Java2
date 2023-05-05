@@ -110,7 +110,7 @@ Especifica la tabla que se usa para realizar el *map* de una colección de atrib
 Especifica el *mapping* hacia una entidad que representa la llave.  
 
 <br/>
-<br/>
-
 
 [Siguiente ](../Sesion-02/Readme.md)(Sesión 02)
+
+[Regresar a root ](../Readme.md)(Principal)
