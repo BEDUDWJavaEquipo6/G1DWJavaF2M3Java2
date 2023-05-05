@@ -62,15 +62,5 @@ class ReporteCalificacionesTest {
                 entry("Menganito", 8),entry("Perenganito", 9));
     }
 
-    @Test
-    void listaMaterias(){
-
-    }
-
-
-
-
-
-
 
 }

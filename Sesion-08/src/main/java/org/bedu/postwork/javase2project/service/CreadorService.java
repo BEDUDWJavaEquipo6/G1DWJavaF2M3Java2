@@ -47,5 +47,9 @@ public class CreadorService {
         return cursoRepository.findAll();
     }
 
+    public Curso getCursoById(Long id){
+        return cursoRepository.findById(id).get();
+    }
+
 
 }

@@ -54,4 +54,8 @@ public class Postwork2ServiceImpl implements Postwork2Service {
                 );
         return calificacion;
     }
+
+    public Curso findCursoById(Long id){
+        return creadorService.getCursoById(id);
+    }
 }

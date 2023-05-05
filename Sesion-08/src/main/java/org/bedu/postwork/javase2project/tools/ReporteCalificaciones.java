@@ -19,17 +19,18 @@ public class ReporteCalificaciones {
     @Autowired
     private CreadorService creadorService;
 
-    public List<String> listaMaterias(){
-        Iterable<Materia> materias = creadorService.getMateria();
 
-       List<String> listaMateria = StreamSupport.stream(materias.spliterator(), false)
-                .map(Materia::getNombre)
-                .sorted()
-                .collect(Collectors.toList());
+    public Map<Long, String> listaMateriasconId(){
+        Iterable<Curso> cursos = creadorService.getCurso();
 
-       return listaMateria;
+        Map<Long, String> valores = new LinkedHashMap<>();
 
-        //listaMateria.forEach(System.out::println);
+        for (Curso curso: cursos
+             ) {
+             valores.put(curso.getId(), curso.getMaterias().getNombre());
+        }
+
+        return valores;
     }
 
     public Map<String, Integer> listaAlumnosPorCalificacion(Curso curso){
@@ -40,10 +41,7 @@ public class ReporteCalificaciones {
                 valores.put(entry.getKey().getNombreCompleto(), entry.getValue());
                     });
 
-
         return valores;
-
-
     }
 
     public Map<String, Integer> listaAlumnosPorEstudiantes(Curso curso){

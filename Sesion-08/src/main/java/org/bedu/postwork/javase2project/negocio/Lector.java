@@ -18,5 +18,9 @@ public class Lector {
         return scanner.nextInt();
     }
 
+    public Long leeId(){
+        return scanner.nextLong();
+    }
+
 
 }

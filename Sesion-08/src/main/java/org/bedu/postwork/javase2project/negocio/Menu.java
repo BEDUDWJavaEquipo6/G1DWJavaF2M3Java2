@@ -7,9 +7,8 @@ public class Menu {
         System.out.println("2. Carga por archivo");
         System.out.println("3. Listar cursos");
         System.out.println("4. Ver promedio de todos los cursos");
-        System.out.println("5. Ver promedio del curso");
-        System.out.println("6. Inscripción Alumnos");
-        System.out.println("7. Guardar y Salir");
+        System.out.println("5. Opciones del curso");
+        System.out.println("6. Salir");
     }
 
     public void muestraOpcionesCursos() {
