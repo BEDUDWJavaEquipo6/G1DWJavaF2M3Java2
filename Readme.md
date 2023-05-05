@@ -23,4 +23,8 @@
  - [7: Microservicios](Sesion-07/Readme.md)
  - [8: Buenas Practicas](./Sesion-08/Readme.md)
 
+##  Enlaces
+
+![Folder en GDrive](https://drive.google.com/drive/folders/1ZP2cKQZh-P5tXYnDK2QZ6Pt2sapip0cc?usp=share_link)
+![Video presentación](https://drive.google.com/file/d/1vM6_BRa21D7K9MlP5Bnj1kOAidQAJ0I5/view?usp=share_link)
 
