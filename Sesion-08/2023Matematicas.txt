@@ -1,0 +1,5 @@
+Matematicas;2023
+Juan;9
+José;8
+Rodrigo;7
+Francisco;6

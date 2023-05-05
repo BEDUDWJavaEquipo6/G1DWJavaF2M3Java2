@@ -47,3 +47,8 @@ Java Intermedio
  - [Sesión 6: Clases Genéricas](./Sesion-06/Readme.md)
  - [Sesión 7: Microservicios](Sesion-07/Readme.md)
  - [Sesión 8: Buenas Practicas](./Sesion-08/Readme.md)
+
+## 
+
+![Folder en GDrive](https://drive.google.com/drive/folders/1ZP2cKQZh-P5tXYnDK2QZ6Pt2sapip0cc?usp=share_link)
+![Video presentación](https://drive.google.com/file/d/1vM6_BRa21D7K9MlP5Bnj1kOAidQAJ0I5/view?usp=share_link)

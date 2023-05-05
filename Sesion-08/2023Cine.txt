@@ -1,4 +1,4 @@
-Espanol;2
+Cine;5
 Juan;10
 José;10
 Rodrigo;10

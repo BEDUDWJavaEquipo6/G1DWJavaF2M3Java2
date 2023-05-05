@@ -1,4 +1,4 @@
-Espanol;2
+Baile;4
 Juan;10
 José;10
 Rodrigo;10
