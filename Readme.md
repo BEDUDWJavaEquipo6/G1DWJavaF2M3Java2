@@ -12,6 +12,10 @@
 * José Angel Córdoba
 * Francisco Gómez
 
+### Instrucciones
+
+    Las instrucciones de uso se encuentran dentro de cada sesión
+
 ### Contenido
 
  - [1: Gestión de base de datos](./Sesion-01/Readme.md)
