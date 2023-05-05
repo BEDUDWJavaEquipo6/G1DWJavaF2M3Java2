@@ -1,0 +1,5 @@
+Materia;IDCiclo
+Alumno1;10
+Alumno2:9
+Alumno3;8
+Alumno4;7

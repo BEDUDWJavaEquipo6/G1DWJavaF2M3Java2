@@ -1,0 +1,5 @@
+espanol;2
+Juan;10
+José;10
+Rodrigo;10
+Francisco;10
