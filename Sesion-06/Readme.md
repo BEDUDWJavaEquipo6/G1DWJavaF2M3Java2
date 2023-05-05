@@ -60,7 +60,8 @@ Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará 
 
 <br/>
 
-
 [Regresar ](../Sesion-05/Readme.md)(Sesión 05)
 
 [Siguiente ](../Sesion-07/Readme.md)(Sesión 07)
+
+[Regresar a root ](../Readme.md)(Principal)

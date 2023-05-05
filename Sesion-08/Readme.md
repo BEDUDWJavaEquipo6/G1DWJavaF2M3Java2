@@ -36,14 +36,14 @@ _Nota_ Esta sesión no incluye código ya que, al ser un proyecto que el estudia
 
 Asegúrate que el postwork contenga todo lo siguiente, ya que esto se evaluará al término del módulo.
 
-- [ ] El proyecto necesitó aplicar refactorizaciones "Buenas prácticas".
+- [✅] El proyecto necesitó aplicar refactorizaciones "Buenas prácticas".
 
-- [ ] El proyecto continúa ejecutándose correctamente.
+- [✅] El proyecto continúa ejecutándose correctamente.
 
-- [ ] El alumno tiene evidencias del antes y después de las refactorizaciones.
-
+- [✅] El alumno tiene evidencias del antes y después de las refactorizaciones.
 
 <br/>
-<br/>
 
-[Regresar ](../Readme.md)(Sesión 08)
+[Regresar ](../Sesion-07/Readme.md)(Sesión 07)
+
+[Regresar a root ](../Readme.md)(Principal)
